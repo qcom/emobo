@@ -1,0 +1,50 @@
+{
+  "name": "emobo",
+  "version": "0.0.1",
+  "description": "webhook server supporting a small suite of custom Slack slash commands for storing and referencing emoji combos (emobos)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha dist/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qcom/emobo.git"
+  },
+  "keywords": [
+    "slack",
+    "emoji",
+    "combo",
+    "alias",
+    "expansion",
+    "webhook",
+    "server"
+  ],
+  "author": "Zach Hodge",
+  "contributors": [
+    "Matt Wilhelm"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qcom/emobo/issues"
+  },
+  "homepage": "https://github.com/qcom/emobo#readme",
+  "engines": {
+    "node": ">= 4.2.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "config": "^1.16.0",
+    "express": "^4.13.3",
+    "require-dir": "^0.3.0",
+    "slack-api": "^0.1.11"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "mocha": "^2.3.2",
+    "should": "^7.1.0"
+  }
+}
