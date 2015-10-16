@@ -21,7 +21,7 @@ $ npm start
 register an emobo
 
 ```bash
-$ /combo amigo :ryan-dreamteam: :pam-dreamteam: :vikram-dreamteam:
+/combo amigo :ryan-dreamteam: :pam-dreamteam: :vikram-dreamteam:
 ```
 
 ### /x
@@ -37,7 +37,7 @@ expand a message with one or more embedded emobo references
 return all emobos in the registry  
 
 ```bash
-$ /emobos
+/emobos
 ```
 
 ## tests
