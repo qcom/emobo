@@ -34,7 +34,7 @@ expand a message with one or more embedded `$emobo` references
 /x welcome to the $dreamteam
 ```
 
-### /emobos
+### /emobos [help]
 
 return all emobos in the registry
 

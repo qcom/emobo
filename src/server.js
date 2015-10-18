@@ -70,10 +70,17 @@ app.route('/x')
 app.route('/emobos')
 	.post(middleware.auth('emobos'))
 	.post(function handleEmobos(req, res, next) {
-		Store.getDigest().then(function(digest) {
-			res.end(digest);
-		});
+		var {key, val} = lib.parse(req.body.text);
+		// return help if a subcommand request for it is given
+		if (key === 'help') {
+			res.end(`> emobo - a webhook server supporting a small suite of custom Slack slash commands for storing and referencing emoji combos (emobos)\n\n\n\`/combo [emobo] [definition]\`\tregister a new emobo combination\n\`/x $emobo\`\texpand a message with one or more embedded \`$emobo\` references\n\`\/emobos [help]\`\treturn all emobos in the registry`);
+		} else {
+			Store.getDigest().then(function(digest) {
+				res.end(digest);
+			});
+		}
 	});
+
 
 app.route('/delete')
 	.post(middleware.auth('delete'))
