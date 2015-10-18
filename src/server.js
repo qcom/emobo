@@ -95,4 +95,14 @@ app.route('/delete')
 			});
 	});
 
+/* error handler */
+
+let banner = '';
+for (let i = 0; i < 13; i++) banner += `:dkwhoa:`; // 13 donkeys for good luck
+
+app.use(function handleError(err, req, res, next) {
+	console.error(err);
+	res.end(`${banner}\nso sorry, something went wrong...working on it!\n${banner}`);
+});
+
 app.listen(8001);

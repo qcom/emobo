@@ -60,7 +60,7 @@ $ npm test
 
 * oauth
 * drop gulp
-* add error handling middleware
+* improve error handling middleware to check for known operational cases
 * validate new calls to /combo by augmenting the Store to include a validation layer
 * register the necessary slack server's integrations via a script in bin/
 	* eliminate the current redundancy in multiple documentation endpoints with duplicated string literals
