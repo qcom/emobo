@@ -5,6 +5,7 @@ var fs = require('fs');
 var express = require('express');
 var bodyParser = require('body-parser');
 var Slack = require('slack-api');
+var config = require('config');
 
 /* internal dependencies */
 var lib = require('./lib');
