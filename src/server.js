@@ -29,7 +29,7 @@ var emobos = {
 // register a combination in the data store
 app.route('/combo')
 	.post(middleware.auth('combo'))
-	.post(function(req, res, next) {
+	.post(function handleCombo(req, res, next) {
 		var {key, val, options} = lib.parse(req.body.text);
 		let definition;
 		// options.f = force write
@@ -49,7 +49,7 @@ app.route('/combo')
 // expand the provided string with the stored dictionary
 app.route('/x')
 	.post(middleware.auth('x'))
-	.post(function(req, res, next) {
+	.post(function handleX(req, res, next) {
 		let source = req.body.text;
 		let expanded = lib.expand(source, emobos);
 
@@ -71,7 +71,7 @@ app.route('/x')
 // furnish and return a summary string of all stored emobos
 app.route('/emobos')
 	.post(middleware.auth('emobos'))
-	.post(function(req, res, next) {
+	.post(function handleEmobos(req, res, next) {
 		let summary = Object.keys(emobos)
 			.map((key) => `${key}: ${emobos[key]}`)
 			.join('\n');
