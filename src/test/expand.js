@@ -5,17 +5,28 @@ var expand = require('../lib/expand');
 
 describe('#expand()', function() {
 
-	it('should return input string with references expanded based on the provided dictionary', function() {
+	var dictionary;
 
-		let input = `xxx $a xxx $b xxx`;
-		let dictionary = {
+	beforeEach(function() {
+		dictionary = {
 			'a': 'foo',
 			'b': 'bar'
 		};
+	});
 
-		let expected = `xxx foo xxx bar xxx`;
+	describe('should return input string with embedded references expanded based on the provided dictionary', function() {
 
-		expand(input, dictionary).should.equal(expected);
+		it('should expand references with no pre or post text', function() {
+			let input = '$a';
+			let expected = 'foo';
+			expand(input, dictionary).should.equal(expected);
+		});
+
+		it('should expand multiple references with pre and post text', function() {
+			let input = `xxx $a xxx $b xxx`;
+			let expected = `xxx foo xxx bar xxx`;
+			expand(input, dictionary).should.equal(expected);
+		});
 
 	});
 
