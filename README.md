@@ -16,20 +16,22 @@ $ npm start
 
 ## use
 
-### /combo
+### /combo emobo definition
 
-register an emobo
+register a new emobo combination
 
 ```bash
-/combo amigo :ryan-dreamteam: :pam-dreamteam: :vikram-dreamteam:
+/combo amigo :wave::skin-tone-4: :man::skin-tone-4: :flag-mx:
+/combo dreamteam :ryan-dreamteam: :pam-dreamteam: :vikram-dreamteam:
 ```
 
-### /x
+### /x $emobo
 
-expand a message with one or more embedded emobo references
+expand a message with one or more embedded `$emobo` references
 
 ```bash
-/x hey! $amigo
+/x $amigo
+/x welcome to the $dreamteam
 ```
 
 ### /emobos
@@ -46,6 +48,9 @@ return all emobos in the registry
 $ npm install
 $ npm test
 ```
+## todo
+
+* drop gulp
 
 ## license
 
