@@ -36,7 +36,7 @@ expand a message with one or more embedded `$emobo` references
 
 ### /emobos
 
-return all emobos in the registry  
+return all emobos in the registry
 
 ```bash
 /emobos
@@ -58,7 +58,13 @@ $ npm test
 ```
 ## todo
 
+* oauth
 * drop gulp
+* add error handling middleware
+* validate new calls to /combo by augmenting the Store to include a validation layer
+* register the necessary slack server's integrations via a script in bin/
+	* eliminate the current redundancy in multiple documentation endpoints with duplicated string literals
+	  by exposing the repeated phrases as app-level globals
 
 ## license
 
