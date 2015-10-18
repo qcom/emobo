@@ -75,6 +75,15 @@ app.route('/emobos')
 		});
 	});
 
+app.route('/delete')
+	.post(middleware.auth('delete'))
+	.post(function handleDelete(req, res, next) {
+		let key = req.body.text.trim();
+		Store.unset(key)
+			.then(Store.getDigest)
+			.then(function(digest) {
+				res.end(`deleted \`${key}\` ; emobos remaining:\n${digest}`);
+			});
 	});
 
 app.listen(8001);

@@ -21,5 +21,6 @@ Store.getDigest = () => {
 };
 
 Store.set = (key, val) => client.hsetAsync(dictionaryKey, key, val);
+Store.unset = (key) => client.hdelAsync(dictionaryKey, key);
 
 module.exports = Store;
