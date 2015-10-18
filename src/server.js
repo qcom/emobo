@@ -20,6 +20,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+/* routes */
 // register a combination in the data store
 app.route('/combo')
 	.post(middleware.auth('combo'))
@@ -82,6 +83,7 @@ app.route('/emobos')
 	});
 
 
+// remove an emobo from the data store
 app.route('/delete')
 	.post(middleware.auth('delete'))
 	.post(function handleDelete(req, res, next) {
