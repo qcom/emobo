@@ -16,7 +16,7 @@ $ npm start
 
 ## use
 
-### /combo emobo definition
+### /combo [emobo] [definition]
 
 register a new emobo combination
 
@@ -40,6 +40,14 @@ return all emobos in the registry
 
 ```bash
 /emobos
+```
+
+### /delete emobo
+
+purge `emobo` from the registry
+
+```bash
+/delete amigo
 ```
 
 ## tests
