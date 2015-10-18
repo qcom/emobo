@@ -1,6 +1,6 @@
 function expand(input, dictionary, prefix='$') {
 
-	const MAX_LENGTH = 10;
+	const MAX_LENGTH = 20;
 	let escapeRegExp = (string) => string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 	let _validChar = (c) => /^[a-zA-z]+$/.test(c);
 	let _validLength = (s) => s.length <= MAX_LENGTH;
