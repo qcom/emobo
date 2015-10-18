@@ -30,9 +30,10 @@ var emobos = {
 app.route('/combo')
 	.post(middleware.auth('combo'))
 	.post(function(req, res, next) {
-		var {key, val} = lib.parse(req.body.text);
+		var {key, val, options} = lib.parse(req.body.text);
 		let definition;
-		if (definition = emobos[key]) {
+		// options.f = force write
+		if (definition = emobos[key] && !options.f) {
 			return res.end(`
 				nice try, trickster;
 				${key} is already defined: ${definition}
