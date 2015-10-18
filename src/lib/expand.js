@@ -3,8 +3,8 @@ function expand(input, dictionary, prefix='$') {
 	const MAX_LENGTH = 10;
 	let escapeRegExp = (string) => string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 	let _valid = (c) => /^[a-zA-z]+$/.test(c);
-	let marks = [];
 
+	let marks = [];
 	input.split('').forEach((c, pos) => {
 		if (c === prefix) marks.push(pos);
 	});

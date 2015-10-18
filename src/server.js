@@ -4,7 +4,6 @@ var fs = require('fs');
 /* user land dependencies */
 var express = require('express');
 var bodyParser = require('body-parser');
-var config = require('config');
 var Slack = require('slack-api');
 
 /* internal dependencies */
