@@ -1,9 +1,8 @@
+var validator = require('./validator');
+
 function expand(input, dictionary, prefix='$') {
 
-	const MAX_LENGTH = 20;
 	let escapeRegExp = (string) => string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-	let _validChar = (c) => /^[a-zA-z]+$/.test(c);
-	let _validLength = (s) => s.length <= MAX_LENGTH;
 
 	let marks = [];
 	input.split('').forEach((c, pos) => {
@@ -14,7 +13,7 @@ function expand(input, dictionary, prefix='$') {
 	marks.forEach((mark) => {
 		let key = '';
 		let i = mark + 1;
-		while (input[i] && _validChar(input[i]) && _validLength(key)) {
+		while (input[i] && validator.validChar(input[i]) && validator.validLength(key)) {
 			key += input[i++];
 		}
 		keys.push(key);
