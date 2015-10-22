@@ -13,7 +13,7 @@ function expand(input, dictionary, prefix='$') {
 	marks.forEach((mark) => {
 		let key = '';
 		let i = mark + 1;
-		while (input[i] && validator.validChar(input[i]) && validator.validLength(key)) {
+		while (input[i] && validator.isValidChar(input[i]) && validator.isValidKeyLength(key)) {
 			key += input[i++];
 		}
 		keys.push(key);

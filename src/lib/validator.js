@@ -1,4 +1,4 @@
-const MAX_LENGTH = 20;
+const MAX_KEY_LENGTH = 20;
 
-exports.validChar = (c) => /^[a-zA-z]+$/.test(c);
-exports.validLength = (s) => s.length <= MAX_LENGTH;
+exports.isValidChar = (c) => /^[a-zA-z]+$/.test(c);
+exports.isValidKeyLength = (s) => s.length <= MAX_KEY_LENGTH;
