@@ -17,6 +17,7 @@ Store.get = (key) => client.hgetAsync(dictionaryKey, key);
 Store.getAll = () => client.hgetallAsync(dictionaryKey);
 Store.getDigest = () => {
 	return Store.getAll().then((emobos) => {
+		if (!emobos) return 'there are currently no emobos :simple_frown:';
 		return Object.keys(emobos)
 			.map((key) => `${key}: ${emobos[key]}`)
 			.join('\n');
